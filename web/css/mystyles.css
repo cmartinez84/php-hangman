@@ -1,0 +1,37 @@
+body{
+  background: url("http://il7.picdn.net/shutterstock/videos/6094877/thumb/1.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+h1{
+  font-family: 'Monoton', cursive;
+  font-size: 5em !important;
+  color: white;
+}
+button{
+  background: transparent !important;
+  text-transform: uppercase;
+}
+button:hover{
+  color: white;
+  background: black !important;
+  box-shadow: 4px 4px 4px 4px yellow;
+}
+
+.well{
+  text-align: center;
+  margin: 0 auto;
+  background: white !important;
+  position: fixed;
+  top: 5%;
+}
+.hangman{
+  font-family: 'Monoton', cursive;
+  letter-spacing: 40px;
+  font-size: 10em;
+}
+span{
+  display: block;
+}

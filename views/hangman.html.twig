@@ -4,10 +4,17 @@
         <title>Hangman</title>
     </head>
     <body>
-      <form class="" action="/guess" method="post">
-        <input type="text" name="guess" placeholder="Enter a letter to guess">
-        <button type="submit" name="button">Go!</button>
-        <a href="/"><button type="button" name="button"> Wanna give up and play again?</button></a>
-      </form>
+    <div class="container">
+        <div class="well">
+          <form class="" action="/guess" method="post">
+            <span class = "hangman">{{game.hiddenAnswer}}</span>
+            <input type="text" name="guess" placeholder="Enter a letter to guess">
+            <button type="submit" name="button">Go!</button>
+            <a href="/"><button type="button" name="button"> Wanna give up and play again?</button></a>
+          </form>
+          <p>Guessed Letters: {{guessed.join}}  </p>
+        </div>
+    </div>
+
     </body>
 </html>

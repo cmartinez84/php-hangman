@@ -6,6 +6,7 @@
   private $answer;
   private $hiddenAnswer;
   private $wordArray;
+  public $guessedLetters = array();
   function __construct($player){
     $this->player = $player;
     $this->answer = "Music";
@@ -39,10 +40,10 @@
     while($answerLength >= 0)
     {
       if($letter == (substr($this->answer,$answerLength, 1))){
-        echo $letter;
+
         $this->hiddenAnswer = substr_replace($this->hiddenAnswer, $letter, $answerLength, 1);
       }
-    
+
       $answerLength = $answerLength - 1;
 
     }

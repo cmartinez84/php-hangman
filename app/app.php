@@ -24,8 +24,8 @@
   $app->post("/guess", function() use ($app){
     $game = $_SESSION['hangman'];
     $game->playerGuess($_POST['guess']);
-    var_dump($game->getHiddenAnswer());
-    return $app['twig']->render('hangman.html.twig');
+    array_push($game->guessedLetters,$_POST['guess']);
+    return $app['twig']->render('hangman.html.twig', array('game' => $game, 'guessed' => $game->guessedLetters));
   });
 
 return $app;
