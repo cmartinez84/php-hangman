@@ -9,12 +9,15 @@
   function __construct($player){
     $this->player = $player;
     $this->answer = "Music";
-    $this->hiddenAnswer = array();
     $this->wordArray = array("supercalifragilisticexpialidocious", "puclchritrude", "shit", "concupiscence", "toggle", "abnegation");
   }
   function getPlayer()
   {
     return $this->player;
+  }
+  function setPlayer($player){
+    $this->player = $player;
+
   }
   function getAnswer()
   {
@@ -39,12 +42,22 @@
         echo $letter;
         $this->hiddenAnswer = substr_replace($this->hiddenAnswer, $letter, $answerLength, 1);
       }
-      else{
-        echo "-  ";
-      }
+    
       $answerLength = $answerLength - 1;
 
     }
+  }
+  function save()
+  {
+    $_SESSION["hangman"] = $this;
+  }
+  // static function getAll()
+  // {
+  //     return $_SESSION['allCds'];
+  // }
+  static function deleteAll()
+  {
+      $_SESSION['hangman'] = "";
   }
 
 
