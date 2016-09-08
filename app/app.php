@@ -15,7 +15,9 @@
   $app->get("/", function() use ($app){
     $new_game = new Game ("KD");
     $new_game->createHiddenAnswer();
+    $new_game->playerGuess("u");
     var_dump($new_game->getHiddenAnswer());
+
     return $app['twig']->render('home.html.twig');
   });
 
