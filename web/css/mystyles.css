@@ -19,13 +19,16 @@ button:hover{
   background: black !important;
   box-shadow: 4px 4px 4px 4px yellow;
 }
-
+.guessedLetters{
+  letter-spacing: 30px;
+}
 .well{
   text-align: center;
   margin: 0 auto;
   background: white !important;
   position: fixed;
   top: 5%;
+  left: 25%;
 }
 .hangman{
   font-family: 'Monoton', cursive;

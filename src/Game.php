@@ -6,7 +6,7 @@
   private $answer;
   private $hiddenAnswer;
   private $wordArray;
-  public $guessedLetters = array();
+  public $guessedLetters = "";
   function __construct($player){
     $this->player = $player;
     $this->answer = "Music";
@@ -36,18 +36,17 @@
   function playerGuess($letter)
   {
     $answerLength = (strlen($this->answer))-1;
-    // echo substr($this->answer, $answerLength, 1);
     while($answerLength >= 0)
     {
       if($letter == (substr($this->answer,$answerLength, 1))){
-
         $this->hiddenAnswer = substr_replace($this->hiddenAnswer, $letter, $answerLength, 1);
       }
-
       $answerLength = $answerLength - 1;
-
     }
+    $this->guessedLetters= substr_replace($this->guessedLetters, $letter, strlen($this->guessedLetters), 0);
+
   }
+
   function save()
   {
     $_SESSION["hangman"] = $this;
